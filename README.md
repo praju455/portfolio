@@ -87,6 +87,6 @@ public/
 ## Contact
 
 - **Email:** 5434223prajwaln@gmail.com
-- **LinkedIn:** [linkedin.com/in/prajwal-n-r](https://linkedin.com/in/prajwal-n-r)
+- **LinkedIn:** [linkedin.com/in/prajwalnr](https://www.linkedin.com/in/prajwalnr/)
 - **GitHub:** [github.com/praju455](https://github.com/praju455)
 - **Instagram:** [@praj264ironcap](https://instagram.com/praj264ironcap)

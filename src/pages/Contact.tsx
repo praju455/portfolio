@@ -141,7 +141,7 @@ const Contact = () => {
             <div className="contact-connect-row">
               <h2 className="contact-connect-heading">CONNECT</h2>
               <a
-                href="https://linkedin.com/in/prajwal-n-r"
+                href="https://www.linkedin.com/in/prajwalnr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-connect-arrow"
@@ -163,7 +163,7 @@ const Contact = () => {
                 <span>GITHUB</span>
               </a>
               <a
-                href="https://linkedin.com/in/prajwal-n-r"
+                href="https://www.linkedin.com/in/prajwalnr/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-social-item"
@@ -280,7 +280,7 @@ const Contact = () => {
                 {['GitHub', 'LinkedIn'].map(s => (
                   <a
                     key={s}
-                    href={s === 'GitHub' ? 'https://github.com/praju455' : 'https://linkedin.com/in/prajwal-n-r'}
+                    href={s === 'GitHub' ? 'https://github.com/praju455' : 'https://www.linkedin.com/in/prajwalnr/'}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="contact-dark-icon"

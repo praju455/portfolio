@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="nav-right">
           <span className="nav-divider">/</span>
           <a
-            href="https://linkedin.com/in/prajwal-n-r"
+            href="https://www.linkedin.com/in/prajwalnr/"
             target="_blank"
             rel="noopener noreferrer"
             className="nav-icon"
