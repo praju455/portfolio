@@ -4,7 +4,7 @@
 
 Personal portfolio site built with **React + Vite + TypeScript**. Editorial dark-themed design showcasing projects, experience, and contact.
 
-🌐 **Live:** [prajwal-n-r.vercel.app](https://prajwal-n-r.vercel.app)
+🌐 **Live:** [prajwalnr.vercel.app](https://prajwalnr.vercel.app)
 
 ---
 
