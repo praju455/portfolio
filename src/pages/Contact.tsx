@@ -635,8 +635,13 @@ const Contact = () => {
           .contact-dark-inner { flex-direction: column; align-items: flex-start; }
         }
         @media (max-width: 600px) {
-          .contact-heading { font-size: 4.5rem; }
-          .contact-dark-name { font-size: 4rem; }
+          .contact-heading { font-size: 3.5rem; }
+          .contact-dark-name { font-size: 3rem; }
+          .contact-info-col { padding: 2rem 1.25rem; }
+          .contact-connect-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
+          .form-row { grid-template-columns: 1fr; }
+          .form-section { padding: 2.5rem 1.25rem; }
+          .contact-dark-band { padding: 2.5rem 0; }
         }
       `}</style>
     </div>

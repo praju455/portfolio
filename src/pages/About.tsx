@@ -346,6 +346,15 @@ const About = () => (
         .about-photo-wrap { border-right: none; border-bottom: 2px solid #0a0a0a; }
         .about-hero-title { font-size: 3.5rem; }
         .interests-grid { grid-template-columns: 1fr; }
+        .about-hero-section { padding: 3rem 0; }
+        .about-section { padding: 0 1.25rem; }
+        .cta-banner-inner { padding: 1.75rem 1.25rem; }
+        .cta-banner-heading { font-size: 2.2rem; }
+        .about-bottom-cta { padding: 2.5rem 0 3rem; }
+      }
+      @media (max-width: 480px) {
+        .about-hero-title { font-size: 2.8rem; }
+        .bottom-cta-btn { font-size: 1.4rem; padding: 0.9rem 1.75rem; }
       }
     `}</style>
   </div>

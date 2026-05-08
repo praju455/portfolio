@@ -614,7 +614,6 @@ const Home = () => {
         .t-key { color: #f8c555; }
         .t-str { color: #7ec699; }
 
-        /* ── RESPONSIVE ── */
         @media (max-width: 992px) {
           .hero-section { grid-template-columns: 0 1fr 1fr; }
           .hero-side-label { display: none; }
@@ -628,8 +627,24 @@ const Home = () => {
         @media (max-width: 768px) {
           .hero-section { grid-template-columns: 1fr; }
           .hero-text-block { padding: 3.5rem 1.5rem 2rem; border-right: none; }
-          .hero-photo-area { padding: 1.5rem; }
-          .hero-heading { font-size: clamp(4rem, 18vw, 7rem); }
+          .hero-photo-area { padding: 1rem 1.5rem 2rem; border-left: none; border-top: 2px solid #0a0a0a; }
+          .hero-photo-frame { height: 60vw; min-height: 260px; box-shadow: 4px 4px 0 #0a0a0a; }
+          .hero-heading { font-size: clamp(3.5rem, 16vw, 6rem); }
+          .hero-quote { font-size: 0.75rem; max-width: 100%; }
+          .focus-section { padding: 4rem 0; }
+          .featured-section { padding: 3.5rem 0; }
+          .stack-section { padding: 3.5rem 0 4.5rem; }
+          .terminal-section { padding: 3.5rem 0 4rem; }
+          .terminal-body { padding: 1.5rem; font-size: 0.78rem; }
+          .section-wrap { padding: 0 1.25rem; }
+        }
+        @media (max-width: 480px) {
+          .hero-text-block { padding: 2.5rem 1.25rem 1.5rem; }
+          .hero-photo-area { padding: 0.75rem 1.25rem 1.5rem; }
+          .hero-photo-frame { height: 72vw; }
+          .hero-heading { font-size: clamp(3rem, 15vw, 5rem); }
+          .featured-card-body { padding: 1rem; }
+          .stack-col { padding: 1.5rem; }
         }
       `}</style>
     </div>
