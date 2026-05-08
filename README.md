@@ -1,74 +1,92 @@
-# React + TypeScript + Vite
+# Prajwal N R — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> "I build before I overthink. Ideas stay ideas until there's code behind them."
 
-Currently, two official plugins are available:
+Personal portfolio site built with **React + Vite + TypeScript**. Editorial dark-themed design showcasing projects, experience, and contact.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 **Live:** [prajwal-n-r.vercel.app](https://prajwal-n-r.vercel.app)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Pages
 
-## Expanding the ESLint configuration
+| Route | Description |
+|-------|-------------|
+| `/` | Hero section with portrait, quote, and intro |
+| `/projects` | CraveBite, Veer Rakshak, ElderlyMinds, PolyX |
+| `/about` | Bio, tech stack, and skills |
+| `/experience` | Hackathons, certifications, leadership |
+| `/contact` | Social links, email, and live message form |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Framework:** React 18 + TypeScript
+- **Bundler:** Vite
+- **Animations:** Framer Motion
+- **Fonts:** Barlow Condensed, Inter, JetBrains Mono
+- **Contact Form:** FormSubmit.co (no backend needed)
+- **Deployment:** Vercel
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Run Locally
+
+```bash
+# Clone the repo
+git clone https://github.com/praju455/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Build for Production
+
+```bash
+npm run build
 ```
-# portfolio
+
+Output goes to `dist/`. Preview it with:
+
+```bash
+npm run preview
+```
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Navbar.tsx       # Fixed top nav with active link state
+│   └── Footer.tsx       # Minimal footer
+├── pages/
+│   ├── Home.tsx         # Hero section
+│   ├── About.tsx        # Bio + skills
+│   ├── Projects.tsx     # Project cards
+│   ├── Experience.tsx   # Hackathons + certifications
+│   └── Contact.tsx      # Contact form + socials
+public/
+├── profile/             # Portrait photos
+├── projects/            # Project screenshots
+└── resume.pdf           # Resume (linked from navbar)
+```
+
+---
+
+## Contact
+
+- **Email:** 5434223prajwaln@gmail.com
+- **LinkedIn:** [linkedin.com/in/prajwal-n-r](https://linkedin.com/in/prajwal-n-r)
+- **GitHub:** [github.com/praju455](https://github.com/praju455)
+- **Instagram:** [@praj264ironcap](https://instagram.com/praj264ironcap)

@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
-  show: (i = 0) => ({
+  show: (i: number = 0) => ({
     opacity: 1, y: 0,
     transition: { duration: 0.5, delay: i * 0.08, ease: [0.4, 0, 0.2, 1] },
   }),
