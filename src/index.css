@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* Light editorial theme */
+  --bg-light: #eeedf2;
+  --bg-white: #f5f4f9;
+  --bg-dark: #0a0a0a;
+  --bg-dark-2: #111111;
+  --bg-card: #ffffff;
+  --bg-dot: #e0dfe5;
+
+  /* Text */
+  --text-black: #080808;
+  --text-dark: #1a1a1a;
+  --text-mid: #444444;
+  --text-muted: #888888;
+  --text-white: #ffffff;
+  --text-off-white: #cccccc;
+
+  /* Accent */
+  --accent-red: #cc0000;
+  --accent-red-bg: rgba(204, 0, 0, 0.08);
+
+  /* Borders */
+  --border-dark: #0a0a0a;
+  --border-mid: #cccccc;
+  --border-light: #e0e0e0;
+
+  /* Fonts */
+  --font-display: 'Barlow Condensed', 'Inter', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Transitions */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --t-fast: 0.18s;
+  --t-med: 0.35s;
+}
+
+/* ───────── RESET ───────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-light);
+  color: var(--text-black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ───────── SCROLLBAR ───────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-light); }
+::-webkit-scrollbar-thumb { background: #aaa; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #888; }
+
+/* ───────── TYPOGRAPHY ───────── */
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); }
+
+/* Display headings — bold upright */
+.display-bold {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: normal;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Display headings — italic outline */
+.display-italic-outline {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  -webkit-text-stroke: 1.5px currentColor;
+  color: transparent;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Display headings — italic filled */
+.display-italic {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ───────── LAYOUT ───────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.5rem; }
+}
+
+/* ───────── DOT TEXTURE ───────── */
+.dot-bg {
+  background-image: radial-gradient(circle, var(--bg-dot) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* ───────── TECH TAG BADGES ───────── */
+.tech-tag {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--border-dark);
+  color: var(--text-dark);
+  background: transparent;
+  white-space: nowrap;
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.tech-tag:hover {
+  background: var(--text-dark);
+  color: var(--bg-white);
+}
+
+.tech-tag-white {
+  border-color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.85);
+}
+
+.tech-tag-white:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* ───────── STATUS BADGE ───────── */
+.status-badge {
+  display: inline-block;
+  background: var(--text-black);
+  color: var(--text-white);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+}
+
+/* ───────── BUTTONS ───────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all var(--t-fast) var(--ease);
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.btn-black {
+  background: var(--text-black);
+  color: var(--text-white);
+  padding: 1rem 2rem;
+}
+
+.btn-black:hover {
+  background: #222;
+  transform: translateX(3px);
+}
+
+.btn-outline-dark {
+  border: 2px solid var(--text-black);
+  color: var(--text-black);
+  padding: 0.6rem 1.2rem;
+  font-style: normal;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.btn-outline-dark:hover {
+  background: var(--text-black);
+  color: var(--text-white);
+}
+
+/* ───────── PHOTO FRAME ───────── */
+.photo-frame {
+  position: relative;
+  display: inline-block;
+}
+
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: 8px -8px -8px 8px;
+  border: 2px solid var(--text-black);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.photo-frame-inner {
+  position: relative;
+  z-index: 1;
+  border: 2px solid var(--text-black);
+  overflow: hidden;
+  background: #c8c8c8;
+}
+
+.photo-frame-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1);
+  display: block;
+}
+
+/* ───────── SECTION DIVIDER ───────── */
+.section-divider {
+  height: 3px;
+  background: var(--text-black);
+  width: 100%;
+}
+
+/* ───────── SKILL GROUP ───────── */
+.skill-group {
+  margin-bottom: 2.5rem;
+}
+
+.skill-group-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2.2rem;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.skill-group-title .outline-word {
+  -webkit-text-stroke: 1.5px var(--text-black);
+  color: transparent;
+  font-style: italic;
+}
+
+.skill-group-desc {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  padding-left: 4px;
+  border-left: 3px solid var(--text-muted);
+  line-height: 1.6;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ───────── NAVBAR GLOBAL ───────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg-light);
+  border-bottom: 2px solid var(--border-dark);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Page offset */
+.page-wrapper {
+  padding-top: 76px;
+}
+
+/* ───────── FOOTER GLOBAL ───────── */
+.footer {
+  background: var(--bg-light);
+  border-top: 2px solid var(--border-dark);
+  padding: 1.2rem 2.5rem;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ───────── RESPONSIVE HELPERS ───────── */
+@media (max-width: 992px) {
+  .hide-mobile { display: none !important; }
+}
