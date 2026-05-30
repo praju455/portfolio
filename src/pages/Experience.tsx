@@ -802,12 +802,17 @@ const Experience = () => {
         .exp-cta-btn span { font-style: normal; }
 
         /* RESPONSIVE */
-        @media (max-width: 1100px) { .jm-scene { grid-template-columns: 1fr; } .jm-right { display: none; } }
+        @media (max-width: 1100px) { 
+          .jm-scene { grid-template-columns: 1fr; } 
+          .jm-right { display: none; } 
+        }
         @media (max-width: 900px) {
           .exp-hero-stat-row { grid-template-columns: 1fr 1fr; }
           .exp-stat { border-bottom: 2px solid #0a0a0a; }
           .hack-grid { grid-template-columns: 1fr 1fr; }
           .top3-grid { grid-template-columns: repeat(2, 1fr); gap: 2px; }
+          .top3-card { padding: 1.5rem; }
+          .top3-name { font-size: 1.4rem; }
           .gallery-grid { 
             grid-template-columns: repeat(2, 1fr); 
             grid-template-rows: repeat(3, 200px); 
@@ -825,8 +830,19 @@ const Experience = () => {
         @media (max-width: 640px) {
           .exp-wrap { padding: 0 1.5rem; }
           .exp-hero-inner { padding: 0 1.5rem 2.5rem; }
-          .exp-stat { padding: 1.25rem 1.5rem; }
+          .exp-headline-solid { font-size: 3rem; }
+          .exp-headline-outline { font-size: 1.8rem; }
+          .exp-hero-stat-row { grid-template-columns: 1fr 1fr; }
+          .exp-stat { padding: 1.25rem 1rem; }
+          .exp-stat-num { font-size: 2rem; }
+          .exp-stat-label { font-size: 0.5rem; }
+          .exp-sec-title { font-size: 2rem; }
+          .exp-section { padding: 3rem 0; }
           .hack-grid { grid-template-columns: 1fr; }
+          .top3-grid { grid-template-columns: 1fr; gap: 2px; }
+          .top3-card { padding: 1.75rem; }
+          .top3-name { font-size: 1.6rem; }
+          .top3-cert { max-height: 150px; }
           .gallery-grid { 
             grid-template-columns: 1fr; 
             grid-template-rows: repeat(6, 220px); 
@@ -838,11 +854,37 @@ const Experience = () => {
           .gallery-item:nth-child(5) { grid-column: 1 / 2; grid-row: 5 / 6; }
           .gallery-item:nth-child(6) { grid-column: 1 / 2; grid-row: 6 / 7; }
           .skill-card { padding: 1.75rem; }
+          .skill-icon { font-size: 2rem; }
+          .cert-list { gap: 1rem; }
+          .cert-item { padding: 1.25rem; }
           .journey-station { width: 260px; }
           .journey-track { padding: 0 2rem; }
+          .journey-card { padding: 1.25rem; }
+          .journey-name { font-size: 1.3rem; }
+          .journey-launch-wrap { padding: 3rem 1.5rem; }
           .journey-launch-btn { font-size: 1.3rem; padding: 0.9rem 1.75rem; }
+          .journey-drag-hint { font-size: 0.5rem; padding: 1rem 0 1rem; }
+          .exp-cta-heading { font-size: 2.5rem; }
+          .exp-cta-btn { font-size: 1.2rem; padding: 0.9rem 1.75rem; }
           .jm-left { padding: 1.5rem; }
+          .jm-name { font-size: 2rem; }
           .jm-topbar, .jm-bottom { padding-left: 1.25rem; padding-right: 1.25rem; }
+          .jm-nav-btn { padding: 0.6rem 1rem; font-size: 0.7rem; }
+        }
+        @media (max-width: 480px) {
+          .exp-headline-solid { font-size: 2.5rem; }
+          .exp-headline-outline { font-size: 1.5rem; }
+          .exp-hero-stat-row { grid-template-columns: 1fr; }
+          .exp-stat { border-right: none; border-bottom: 2px solid #0a0a0a; }
+          .exp-stat:last-child { border-bottom: none; }
+          .exp-wrap { padding: 0 1rem; }
+          .exp-hero-inner { padding: 0 1rem 2rem; }
+          .gallery-grid { grid-template-rows: repeat(6, 180px); }
+          .top3-card { padding: 1.5rem; }
+          .journey-station { width: 240px; }
+          .journey-card { padding: 1rem; }
+          .journey-launch-btn { font-size: 1.1rem; padding: 0.8rem 1.5rem; }
+          .exp-cta-heading { font-size: 2rem; }
         }
       `}</style>
     </div>
