@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
 const Navbar = () => {
   const { pathname } = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { to: '/projects', label: 'Projects' },
@@ -10,11 +12,13 @@ const Navbar = () => {
     { to: '/contact', label: 'Contact' },
   ];
 
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-inner">
         {/* Logo */}
-        <Link to="/" className="nav-logo">
+        <Link to="/" className="nav-logo" onClick={closeMobileMenu}>
           <span className="nav-logo-top">PRAJWAL <span className="nav-logo-bolt">⚡</span></span>
           <span className="nav-logo-bottom">N R</span>
         </Link>
@@ -64,7 +68,53 @@ const Navbar = () => {
             RESUME <span className="nav-resume-icon">[↗]</span>
           </a>
         </div>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="mobile-menu-btn" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}></span>
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+        <div className="mobile-menu-links">
+          {navLinks.map(link => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`mobile-menu-link ${pathname === link.to ? 'mobile-menu-link-active' : ''}`}
+              onClick={closeMobileMenu}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+        <div className="mobile-menu-footer">
+          <div className="mobile-menu-socials">
+            <a href="https://www.linkedin.com/in/prajwalnr/" target="_blank" rel="noopener noreferrer" className="mobile-social-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="https://github.com/praju455" target="_blank" rel="noopener noreferrer" className="mobile-social-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+          </div>
+          <a href="/Prajwal_NR_Resume.pdf" target="_blank" rel="noopener noreferrer" className="mobile-resume-btn">
+            VIEW RESUME ↗
+          </a>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {mobileMenuOpen && <div className="mobile-overlay" onClick={closeMobileMenu}></div>}
 
       <style>{`
         .navbar {
@@ -167,10 +217,135 @@ const Navbar = () => {
         .nav-resume:hover { background: #0a0a0a; color: #fff; box-shadow: none; }
         .nav-resume-icon { opacity: 0.55; }
 
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+          display: none;
+          background: none;
+          border: none;
+          padding: 0.5rem;
+          cursor: pointer;
+          z-index: 102;
+        }
+        .hamburger {
+          display: block;
+          width: 24px;
+          height: 2px;
+          background: #0a0a0a;
+          position: relative;
+          transition: background 0.3s;
+        }
+        .hamburger::before,
+        .hamburger::after {
+          content: '';
+          position: absolute;
+          width: 24px;
+          height: 2px;
+          background: #0a0a0a;
+          transition: transform 0.3s;
+        }
+        .hamburger::before { top: -7px; }
+        .hamburger::after { top: 7px; }
+        .hamburger.open { background: transparent; }
+        .hamburger.open::before { transform: rotate(45deg); top: 0; }
+        .hamburger.open::after { transform: rotate(-45deg); top: 0; }
+
+        /* Mobile Menu */
+        .mobile-menu {
+          position: fixed;
+          top: 56px;
+          right: -100%;
+          width: 280px;
+          height: calc(100vh - 56px);
+          background: #eeedf2;
+          border-left: 2px solid #0a0a0a;
+          transition: right 0.3s ease;
+          z-index: 101;
+          display: flex;
+          flex-direction: column;
+          overflow-y: auto;
+        }
+        .mobile-menu-open {
+          right: 0;
+        }
+        .mobile-menu-links {
+          flex: 1;
+          padding: 2rem 0;
+        }
+        .mobile-menu-link {
+          display: block;
+          font-family: 'Inter', sans-serif;
+          font-weight: 900;
+          font-size: 0.75rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #555;
+          padding: 1rem 2rem;
+          text-decoration: none;
+          border-bottom: 1px solid #ddd;
+          transition: all 0.2s;
+        }
+        .mobile-menu-link:hover {
+          background: #fff;
+          color: #0a0a0a;
+        }
+        .mobile-menu-link-active {
+          background: #0a0a0a;
+          color: #fff !important;
+        }
+        .mobile-menu-footer {
+          padding: 2rem;
+          border-top: 2px solid #0a0a0a;
+        }
+        .mobile-menu-socials {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+        }
+        .mobile-social-icon {
+          color: #555;
+          padding: 0.5rem;
+          transition: color 0.2s;
+        }
+        .mobile-social-icon:hover {
+          color: #0a0a0a;
+        }
+        .mobile-resume-btn {
+          display: block;
+          text-align: center;
+          font-family: 'Inter', sans-serif;
+          font-size: 0.7rem;
+          font-weight: 900;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          border: 2px solid #0a0a0a;
+          color: #0a0a0a;
+          padding: 0.75rem 1.5rem;
+          text-decoration: none;
+          transition: all 0.2s;
+          box-shadow: 4px 4px 0 #0a0a0a;
+        }
+        .mobile-resume-btn:hover {
+          background: #0a0a0a;
+          color: #fff;
+          box-shadow: none;
+        }
+        .mobile-overlay {
+          position: fixed;
+          top: 56px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 100;
+        }
+
         @media (max-width: 768px) {
           .navbar-inner { padding: 0.5rem 1.25rem; height: 56px; }
           .nav-links { display: none; }
           .nav-divider { display: none; }
+          .nav-right { display: none; }
+          .mobile-menu-btn { display: block; }
         }
       `}</style>
     </nav>
