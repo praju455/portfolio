@@ -79,7 +79,7 @@ src/
 public/
 ├── profile/             # Portrait photos
 ├── projects/            # Project screenshots
-└── resume.pdf           # Resume (linked from navbar)
+└── Prajwal_NR_Resume.pdf  # Resume (linked from navbar)
 ```
 
 ---
