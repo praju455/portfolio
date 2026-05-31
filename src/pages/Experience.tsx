@@ -1,5 +1,6 @@
 import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { useRef, useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -515,7 +516,7 @@ const Experience = () => {
             <p className="exp-cta-sub font-mono">OPEN TO INTERNSHIPS · COLLABORATIONS · 2026</p>
             <h2 className="exp-cta-heading">LET'S <span className="exp-cta-outline">BUILD</span></h2>
           </div>
-          <a href="/contact" className="exp-cta-btn">GET IN TOUCH <span>→</span></a>
+          <Link to="/contact" className="exp-cta-btn">GET IN TOUCH <span>→</span></Link>
         </div>
       </section>
 
